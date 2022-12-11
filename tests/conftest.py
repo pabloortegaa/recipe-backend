@@ -9,6 +9,8 @@ def testing_client(scope='module'):
     recipe = Recipe(name='Jamon con melon', ingredients='- Jamon - Melon', instructions='Cortar el jamon y el melon en rodajas y ponerlo en una bandeja', favorite=False, rating=3)
     db.session.add(recipe)
     db.session.commit()
-    yield app.test_client()
+    with app.test_client() as testing_client:
+        yield testing_client
+
     db.drop_all()
 

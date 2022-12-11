@@ -13,5 +13,5 @@ def test_dummy_wrong_route():
         assert response.status_code == 404
 
 def test_create_recipe(testing_client):
-    response = testing_client.post('/recipes', json={'name': 'Jamon con melon', 'ingredients': '- Jamon - Melon', 'instructions': 'Cortar el jamon y el melon en rodajas y ponerlo en una bandeja', 'favorite': False, 'rating': 3})
+    response = testing_client.post('/recipes', json={'name': 'TEST', 'ingredients': 'TEST', 'instructions': 'TEST', 'favorite': False, 'rating': 3})
     assert response.status_code == 201
