@@ -14,10 +14,10 @@ permissions:
   contents: read
 
 jobs:
+  env:
+    ENV: ghci
   build:
-    env:
-      ENV: ghci
-
+  
     runs-on: ubuntu-latest
 
     steps:
