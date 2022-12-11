@@ -5,20 +5,27 @@ name:  Recipe Python Backend
 
 on:
   push:
-    branches: [ "main", "dev" ]
+    branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
   workflow_dispatch:
 
+
+
 permissions:
   contents: read
+  id-token: write
 
 jobs:
-  env:
-    ENV: ghci
   build:
-  
+    
     runs-on: ubuntu-latest
+    env:
+      ENV: ghci
+      DBHOST: bla
+      DBUSER: bla
+      DBPASS: bla
+      DBNAME: bla
 
     steps:
     - uses: actions/checkout@v3
@@ -39,4 +46,4 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Test with pytest
       run: |
-        python -m pytest --cov= backend_api avi
+        python -m pytest --cov=iebank_api -v
