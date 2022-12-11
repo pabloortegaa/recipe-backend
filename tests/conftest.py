@@ -2,7 +2,7 @@ import pytest
 from backend_api.models import Recipe
 from backend_api import db, app
 
-
+'''
 @pytest.fixture
 def testing_client(scope='module'):
     db.create_all()
@@ -14,3 +14,4 @@ def testing_client(scope='module'):
 
     db.drop_all()
 
+'''
