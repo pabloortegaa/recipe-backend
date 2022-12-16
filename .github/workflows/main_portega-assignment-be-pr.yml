@@ -58,6 +58,6 @@ jobs:
         uses: azure/webapps-deploy@v2
         id: deploy-to-webapp
         with:
-          app-name: 'portega-assignment-be-pr'
+          app-name: 'portega-assignment-be-prod'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_DD0FD2B58D1C45F2A15FCF3693498F7C }}
