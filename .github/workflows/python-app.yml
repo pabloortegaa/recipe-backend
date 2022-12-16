@@ -53,7 +53,7 @@ jobs:
     needs: build
     env:
       ENV: prod
-      DBUSER: postgres@jseijas-dbsrv.postgres.database.azure.com
+      DBUSER: postgres
       DBPASS: Pa$$w0rd1990
       DBHOST: jseijas-dbsrv
       DBNAME: portega-assignment-db-prod"
