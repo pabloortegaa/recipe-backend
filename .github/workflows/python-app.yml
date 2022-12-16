@@ -57,7 +57,7 @@ jobs:
       DBUSER: postgres@jseijas-dbsrv.postgres.database.azure.com
       DBPASS: Pa$$w0rd1990
       DBHOST: jseijas-dbsrv
-      DBNAME: portega-assignment-prod-db
+      DBNAME: portega-assignment-db-prod"
     environment:
       name: 'Production'
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
@@ -77,7 +77,7 @@ jobs:
       uses: azure/webapps-deploy@v2
       id: deploy-to-webapp
       with:
-        app-name: 'portega-assignment-be-pr'
+        app-name: 'portega-assignment-be-prod'
 
   deploy-dev:
     if: github.ref == 'refs/heads/dev'
@@ -88,7 +88,7 @@ jobs:
       DBUSER: postgres@jseijas-dbsrv.postgres.database.azure.com
       DBPASS: Pa$$w0rd1990
       DBHOST: jseijas-dbsrv
-      DBNAME: portega-assignment-dev-db
+      DBNAME: portega-assignment-b-dev
     environment:
       name: 'Development'
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
@@ -108,4 +108,4 @@ jobs:
       uses: azure/webapps-deploy@v2
       id: deploy-to-webapp
       with:
-        app-name: 'portega-assignment-be-dv' 
+        app-name: 'portega-assignment-be-dev' 
