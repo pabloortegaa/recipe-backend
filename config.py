@@ -4,7 +4,7 @@ import os
 load_dotenv()
 
 class Config(object):
-    SECRET_KEY = 'this-really-needs-to-be-changed'
+    SECRET_KEY = 'Pablo'
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
 class ProductionConfig(Config):
@@ -14,6 +14,7 @@ class ProductionConfig(Config):
     dbhost=os.getenv('DBHOST'),
     dbname=os.getenv('DBNAME')
     )
+    
 
 class DevelopmentConfig(Config):
     SQLALCHEMY_DATABASE_URI = 'postgresql://{dbuser}:{dbpass}@{dbhost}/{dbname}'.format(
