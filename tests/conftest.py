@@ -11,6 +11,9 @@ def testing_client(scope='module'):
     db.session.commit()
     with app.test_client() as testing_client:
         yield testing_client
-
+    print("user",app.dbuser)
+    print("pass",app.dbpass)
+    print("host",app.dbhost)
+    print("name",app.dbname)
     db.drop_all()
 
