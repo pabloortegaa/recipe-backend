@@ -55,7 +55,7 @@ jobs:
       DBUSER: postgres@jseijas-dbsrv.postgres.database.azure.com
       DBPASS: Pa$$w0rd1990
       DBHOST: jseijas-dbsrv.postgres.database.azure.com
-      DBNAME: portega-assignment-db-prod"
+      DBNAME: portega-assignment-db-prod
     environment:
       name: 'Production'
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
@@ -86,7 +86,7 @@ jobs:
       DBUSER: postgres@jseijas-dbsrv.postgres.database.azure.com
       DBPASS: Pa$$w0rd1990
       DBHOST: jseijas-dbsrv.postgres.database.azure.com
-      DBNAME: portega-assignment-b-dev
+      DBNAME: portega-assignment-db-dev
     environment:
       name: 'Development'
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
