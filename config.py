@@ -8,21 +8,12 @@ class Config(object):
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
 class ProductionConfig(Config):
-    SQLALCHEMY_DATABASE_URI = 'postgresql://{dbuser}:{dbpass}@{dbhost}/{dbname}'.format(
-    dbuser=os.getenv('DBUSER'),
-    dbpass=os.getenv('DBPASS'),
-    dbhost=os.getenv('DBHOST'),
-    dbname=os.getenv('DBNAME')
-    )
+    SQLALCHEMY_DATABASE_URI = 'sqlite:///recipe.db'
+    DEBUG = True
     
 
 class DevelopmentConfig(Config):
-    SQLALCHEMY_DATABASE_URI = 'postgresql://{dbuser}:{dbpass}@{dbhost}/{dbname}'.format(
-    dbuser=os.getenv('DBUSER'),
-    dbpass=os.getenv('DBPASS'),
-    dbhost=os.getenv('DBHOST'),
-    dbname=os.getenv('DBNAME')
-    )
+    SQLALCHEMY_DATABASE_URI = 'sqlite:///recipe.db'
     DEBUG = True
 
 class GithubCIConfig(Config):
